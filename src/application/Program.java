@@ -17,7 +17,7 @@ public class Program {
         List<ChessPiece> captured = new ArrayList<>();
 
         while (true) {
-            try{
+            try {
                 UI.clearScreen();
                 UI.printMatch(chessMatch, captured);
                 System.out.println();
@@ -34,20 +34,18 @@ public class Program {
 
                 ChessPiece capturedPiece = chessMatch.peformChessMove(source, target);
 
-                if(capturedPiece != null) {
+                if (capturedPiece != null) {
                     captured.add(capturedPiece);
                 }
-            }
-            catch(ChessException e) {
+            } catch (ChessException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
-            }
-            catch(InputMismatchException e) {
+            } catch (InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }
         }
-        
+
     }
 
 }
